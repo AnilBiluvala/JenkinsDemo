@@ -9,27 +9,17 @@ pipeline {
             }
         }
 
-        stage('Build & Dependencies') {
+        stage('Build & Execute Script') {
             steps {
-                echo 'Building application workspace...'
-                // Changed 'sh' to 'bat' for Windows
-                bat 'echo "Build Phase Completed Successfully"'
-            }
-        }
-
-        stage('Automated Testing') {
-            steps {
-                echo 'Running automated test suites...'
-                // Changed 'sh' to 'bat' for Windows
-                bat 'echo "Test Phase Passed"'
+                echo 'Running first.py...'
+                bat 'python first.py'
             }
         }
 
         stage('Code Stability Check') {
             steps {
-                echo 'Evaluating build quality metrics...'
-                // Changed 'sh' to 'bat' for Windows
-                bat 'echo "Code stability criteria met."'
+                echo 'Verifying pipeline execution...'
+                bat 'echo "Python script executed successfully!"'
             }
         }
     }
