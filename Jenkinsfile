@@ -12,22 +12,24 @@ pipeline {
         stage('Build & Dependencies') {
             steps {
                 echo 'Building application workspace...'
-                // Command to verify environment stability
-                sh 'echo "Build Phase Completed Successfully"'
+                // Changed 'sh' to 'bat' for Windows
+                bat 'echo "Build Phase Completed Successfully"'
             }
         }
 
         stage('Automated Testing') {
             steps {
                 echo 'Running automated test suites...'
-                sh 'echo "Test Phase Passed"'
+                // Changed 'sh' to 'bat' for Windows
+                bat 'echo "Test Phase Passed"'
             }
         }
 
         stage('Code Stability Check') {
             steps {
                 echo 'Evaluating build quality metrics...'
-                sh 'echo "Code stability criteria met."'
+                // Changed 'sh' to 'bat' for Windows
+                bat 'echo "Code stability criteria met."'
             }
         }
     }
